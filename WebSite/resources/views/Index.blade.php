@@ -16,11 +16,12 @@
         @foreach ($carList as $car)
         <tr>
             <td><a href="{{route('carsSpecs.show', $car->cars_specID)}}">{{$car->Plate}}</td>
-            <td>{{$car->Brand}}</td>
-            <td>{{$car->Model}}</td>
+            <td><a href="{{route('carsSpecs.show', $car->cars_specID)}}">{{$car->Brand}}</td>
+            <td><a href="{{route('carsSpecs.show', $car->cars_specID)}}">{{$car->Model}}</td>
         </tr>
         @endforeach
     </table>
+    <a href="{{route('newCar.form')}}">Add New Car</a>
 </body>
 </html>
 

@@ -10,6 +10,8 @@ class Cars extends Model
 
     use HasFactory;
 
+    //protected $table = 'Cars';
+
     protected $fillable = [
         'Plate',
         'Brand',

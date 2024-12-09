@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cars_specID');
             $table->foreign("cars_specID")->references("id")->on("cars__specs");
-            $table->string('Plate')->unique();
+            $table->integer('Plate')->unique();
             $table->string('Brand');
             $table->string('Model');
             $table->timestamps();

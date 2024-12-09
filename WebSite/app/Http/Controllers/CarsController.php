@@ -21,15 +21,30 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
+
+    public function showform(){
+        return view('NewCar');
+    }
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        /*$request->validate([
+            'Plate'=>'required|unique:carList',
+            'Brand'=>'required',
+            'Model'=>'required',
+        ]);
+        Cars::create([
+            $request->Plate,
+            $request->Brand,
+            $request->Model
+        ]);*/
+        return redirect()->route('cars.index');
     }
 
     /**

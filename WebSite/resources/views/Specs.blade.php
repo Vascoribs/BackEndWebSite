@@ -18,7 +18,7 @@
             <th>Year</th>
         </tr>
         <tr>
-            <td>{{$carSpecs->HorsePower}}</td>
+            <td>{{$carSpecs->Horsepower}}</td>
             <td>{{$carSpecs->Fuel}}</td>
             <td>{{$carSpecs->Color}}</td>
             <td>{{$carSpecs->Gearbox}}</td>

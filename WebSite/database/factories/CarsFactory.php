@@ -16,8 +16,6 @@ class CarsFactory extends Factory
      */
     public function definition(): array
     {
-        /*return [
-            'Plate' => fake()->realText(8)
-        ];*/
+        
     }
 }

@@ -18,7 +18,7 @@ class CarSeeder extends Seeder
         $factory = Factory::create();
         for($i=0 ; $i < 10; ++$i){
             Cars::create([
-                'Plate' => $factory->randomNumber(),
+                'Plate' => $factory->unique()->randomNumber(),
                 'Brand' => $factory->realText(10),
                 'Model' => $factory->realText(10),
                 'cars_specID' => Cars_Specs::inRandomOrder()->first()->id

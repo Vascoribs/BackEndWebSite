@@ -24,7 +24,7 @@ class CarSpecsSeeder extends Seeder
                 'Color' => $factory->realText(10),
                 'Gearbox' => $factory->realText(10),
                 'Engine' => $factory->numberBetween(1100,3000),
-                'No_Doors' => $factory->numberBetween(0,6),
+                'No_Doors' => $factory->numberBetween(1,5),
                 'Year' => $factory->numberBetween(1980,2024)
             ]);
         }
