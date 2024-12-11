@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cars;
+use App\Models\Cars_Specs;
 use Illuminate\Http\Request;
 
 class CarsController extends Controller
@@ -34,16 +35,52 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        /*$request->validate([
-            'Plate'=>'required|unique:carList',
+        $request->validate([
+            'Plate'=>'required',
             'Brand'=>'required',
             'Model'=>'required',
+            'Horsepower' => 'required',
+            'Fuel' => 'required',
+            'Color' => 'required',
+            'Gearbox' => 'required',
+            'Engine' => 'required',
+            'No_Doors' => 'required',
+            'Year' => 'required',
         ]);
+
+        $checkDetails = Cars_Specs::where([
+            'Horsepower' => $request["Horsepower"],
+            'Fuel' => $request["Fuel"],
+            'Color' => $request["Color"],
+            'Gearbox' => $request["Gearbox"],
+            'Engine' => $request["Engine"],
+            'No_Doors' => $request["No_Doors"],
+            'Year' => $request["Year"]
+        ]) -> first();
+
+            if($checkDetails){
+                $newId = $checkDetails["id"];
+            }
+            else{
+                $newDetails = Cars_Specs::create([
+                    'Horsepower' => $request["Horsepower"],
+                    'Fuel' => $request["Fuel"],
+                    'Color' => $request["Color"],
+                    'Gearbox' => $request["Gearbox"],
+                    'Engine' => $request["Engine"],
+                    'No_Doors' => $request["No_Doors"],
+                    'Year' => $request["Year"]
+                ]);
+
+                $newId = $newDetails["id"];
+            }
+        
         Cars::create([
-            $request->Plate,
-            $request->Brand,
-            $request->Model
-        ]);*/
+            'Plate' => $request["Plate"],
+            'Brand' => $request["Brand"],
+            'Model' => $request["Model"],
+            'cars_specID' => $newId
+        ]);
         return redirect()->route('cars.index');
     }
 

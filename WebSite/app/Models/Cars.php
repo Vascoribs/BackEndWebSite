@@ -10,11 +10,12 @@ class Cars extends Model
 
     use HasFactory;
 
-    //protected $table = 'Cars';
+    protected $table = 'Cars';
 
     protected $fillable = [
         'Plate',
         'Brand',
         'Model',
+        'cars_specID'
     ];
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Gearbox');
             $table->string('Engine');
             $table->string('No_Doors');
-            $table->integer('Year');
+            $table->string('Year');
             $table->timestamps();
         });
     }
